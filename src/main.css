@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #145858;
+  --secondary-color: #c8e0ca;
+  --odd-bg: #f0f0f0;
+  --main-deep: #114a4a;
+  --main-dark: #0a2d2d;
+  --chk-color: #4b5563;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background: var(--main-color);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.btn {
+  background: var(--main-color);
+  font-family: Inter;
+  font-weight: 600;
+}
+
+.h {
+  color: var(--main-color);
+  font-family: Krona One;
+}
+
+.hw {
+  font-family: Krona One;
+}
+
+.pw {
+  font-family: poppins;
+}
+
+.f-label {
+  font-family: Inter;
+  color: var(--main-deep);
+}
+
+.f-placeholder {
+  font-family: Inter;
+  color: var(--main-dark);
+}
+
+.p {
+  color: var(--main-color);
+  font-family: poppins;
+}
+
+.chk-text {
+  color: var(--chk-color);
+  font-family: Inter;
+}
+
+.main {
+  background: var(--main-color);
+}
+
+.secondary {
+  background: var(--secondary-color);
+}
+
+.odd-bg {
+  background: var(--odd-bg);
+}
+
+.chk-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.chk-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #d1d1d1;
+  border-radius: 5px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.chk-container input:checked ~ .checkmark {
+  background-color: var(--main-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.chk-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.chk-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}/*# sourceMappingURL=main.css.map */

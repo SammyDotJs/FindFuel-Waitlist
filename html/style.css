@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a button{
+font-family: 'inter', sans-serif;
+font-weight: 500;
+font-size: 13px;
+color: #FFFF;
+text-decoration: none;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0F0F0;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.Logo {
+  font-family: 'Krona One', sans-serif;
+  color: #145858;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button {
+padding: 15px 40px;
+background-color: #145858;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.3 ease 0s;
+}
+
+button:hover{
+background-color: #145840;
+}
+
+.hero-container{
+  height: 600px;
+  padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-container img{
+  width: 80%;
+  height: 500px;
+}
+
+.hero-text{
+  width: 100%;
+}
+
+.hero-text h1{
+  font-family: 'Krona One', sans-serif;
+  font-size: 2.7rem;
+  margin-bottom: 8px;
+  color: #145858;
+}
+
+.hero-text p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #145858;
+}
+
+.hero-btn{
+  font-family: 'inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #FFFF;
+  text-decoration: none;
+}
+
+.features {
+  background-color: antiquewhite;
+}
+.feat-heading {
+  text-align: center;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+  font-family: 'Krona One', sans-serif;
+  font-size:2.7rem;
+  color: #145858;
+}
+
+.features .feat-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap:1.5rem;
+}
+
+.features .feat-container .box{
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.features .feat-container .box img{
+  margin:1rem 0;
+  height: 17rem;
+}
+
+.features .feat-container .box h3{
+  font-size: 1.5rem;
+  line-height: -1.8;
+  font-family: 'Krona One', sans-serif;
+  color: #145858;
+}
+
+.features .feat-container .box p{
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+  color: #145858;
+  padding: 1rem 0;
+}
+
+.features2 {
+  height: 600px;
+  padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: #F0F0F0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.feat-heading2 {
+  width: 100%;
+  font-family: 'Krona One', sans-serif;
+  font-size: 1.7rem;
+  position: relative;
+  left: 50px;
+  top: 200px;
+  margin: 8px;
+  color: #145858;
+}
+
+.box-container {
+  width: 90%;
+  align-content: center;
+}
+
+.box-container .fbox {
+  max-width: 60rem;
+  display: flex;
+  position: relative;
+  left: 500px;
+  bottom: 100px;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+  margin: 1.5rem;
+}
+
+.gas-logo{
+  width: 100%;
+  background-color: antiquewhite;
+}
+.gas-text{
+  text-align: center;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+  font-family: 'Krona One', sans-serif;
+  font-size:2.7rem;
+  color: #145858;
+}
+
+.gas-title p {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #145858;
+}
+
+.imagess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 2rem;
+}
+
+.gas-pic {
+  width: 450px;
+}
+
+.download {
+  height: 400px;
+  padding: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+  .hero-btn2{
+    font-family: 'inter', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #FFFF;
+    text-decoration: none;
+  }
+
+  .hero-btn3{
+    font-family: 'inter', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #FFFF;
+    text-decoration: none;
+  }
+
+  .btn-box {
+    display: flex;
+    gap: 1.3rem;
+  }
