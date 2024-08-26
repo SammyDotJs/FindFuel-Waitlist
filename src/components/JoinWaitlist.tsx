@@ -6,7 +6,18 @@ const JoinWaitlist = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const { scrollRef } = useContext(ScrollIntoViewContext);
+//   const { scrollRef } = useContext(ScrollIntoViewContext);
+  const context = useContext(ScrollIntoViewContext);
+
+  if (!context) {
+    // Handle the case where the context is not provided
+    throw new Error(
+      "ScrollIntoViewContext must be used within a ScrollIntoViewProvider",
+    );
+  }
+
+  const { scrollRef } = context;
+
   return (
     <div
       id="join-waitlist"

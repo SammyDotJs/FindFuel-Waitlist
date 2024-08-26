@@ -2,7 +2,14 @@ import { useContext } from "react";
 import { ScrollIntoViewContext } from "./context/ScrollIntoView";
 
 const Header = () => {
-  const { scrollRef } = useContext(ScrollIntoViewContext);
+    const context = useContext(ScrollIntoViewContext);
+
+  if (!context) {
+    // Handle the case where the context is not provided
+    throw new Error("ScrollIntoViewContext must be used within a ScrollIntoViewProvider");
+  }
+
+  const { scrollRef } = context;
 
   const handleClick = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
