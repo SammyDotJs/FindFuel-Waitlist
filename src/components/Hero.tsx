@@ -1,3 +1,4 @@
+import hero1 from "../assets/hero-1.png";
 import { useContext } from "react";
 import { ScrollIntoViewContext } from "./context/ScrollIntoView";
 
@@ -35,7 +36,7 @@ const Hero = () => {
         </button>
       </div>
       <div className="w-full lg:w-2/5 hidden lg:block">
-        <img src="src/assets/hero-1.png" className="w-full h-full bg-contain" />
+        <img src={hero1} className="w-full h-full bg-contain" />
       </div>
     </div>
   );

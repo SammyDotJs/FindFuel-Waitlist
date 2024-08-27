@@ -5,7 +5,6 @@ const Header = () => {
     const context = useContext(ScrollIntoViewContext);
 
   if (!context) {
-    // Handle the case where the context is not provided
     throw new Error("ScrollIntoViewContext must be used within a ScrollIntoViewProvider");
   }
 
