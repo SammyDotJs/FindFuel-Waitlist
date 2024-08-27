@@ -23,7 +23,7 @@ const JoinWaitlist = () => {
 
   const { scrollRef } = context;
 
-  const handleSubmit = async (e): void => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fullName = `${firstName} ${lastName}`;
     const formData = {
