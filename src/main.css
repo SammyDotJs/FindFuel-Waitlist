@@ -71,8 +71,13 @@
 }
 
 .p {
-  color: var(--main-color);
+  color: var(--main-dark);
   font-family: poppins;
+}
+
+.err {
+  font-family: poppins;
+  color: red;
 }
 
 .chk-text {
@@ -149,4 +154,26 @@
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+.modal .modal-container {
+  position: relative;
+  overflow: hidden;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #145858;
+}
+.modal .err-modal {
+  background: white;
 }/*# sourceMappingURL=main.css.map */

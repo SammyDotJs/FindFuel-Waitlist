@@ -2,6 +2,11 @@ import React, { useContext, useState } from "react";
 import InputField from "./utils/InputField";
 import { ScrollIntoViewContext } from "./context/ScrollIntoView";
 import axios from "axios";
+import { createPortal } from "react-dom";
+import SuccessModal from "./Modals/SuccessModal";
+import Lottie from "lottie-react";
+import loadingAnim from "../assets/Ntl4ulo41s.json";
+import FailedModal from "./Modals/FailedModal";
 
 const JoinWaitlist = () => {
   const [firstName, setFirstName] = useState("");
@@ -9,6 +14,7 @@ const JoinWaitlist = () => {
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const [loading, setLoading] = useState(false);
   //   const { scrollRef } = useContext(ScrollIntoViewContext);
@@ -46,7 +52,7 @@ const JoinWaitlist = () => {
         )
         .then(res => {
           console.log(res);
-          if (res.data == "") {
+          if (res.statusText == "Created") {
             setIsSuccess(true);
             setLoading(false);
             setFirstName("");
@@ -54,17 +60,19 @@ const JoinWaitlist = () => {
             setEmail("");
             setPhoneNo("");
           }
-        })
-        .catch(err => console.error(err));
+        });
     } catch (error) {
       setLoading(false);
+      setError(true);
       console.error(error);
     }
     setTimeout(() => {
       setIsSuccess(false);
+      setError(false);
     }, 2500);
     // console.log(firstName, lastName, email, phoneNo);
   };
+  const mountElement = document.getElementById("overlays");
 
   return (
     <div
@@ -72,6 +80,24 @@ const JoinWaitlist = () => {
       className="h-full flex flex-wrap flex-row justify-center items-center p-9 lg:px-24 lg:py-32"
       ref={scrollRef}
     >
+      {isSuccess &&
+        createPortal(
+          <SuccessModal
+            onClose={() => {
+              setIsSuccess(false);
+            }}
+          />,
+          mountElement ?? document.body,
+        )}
+      {error &&
+        createPortal(
+          <FailedModal
+            onClose={() => {
+              setError(false);
+            }}
+          />,
+          mountElement ?? document.body,
+        )}
       <div className="w-full lg:w-2/5 flex flex-col justify-center gap-6">
         <h1 className="h text-4xl lg:text-6xl font-normal">Join Now</h1>
         <p className="p text-lg">
@@ -134,17 +160,22 @@ const JoinWaitlist = () => {
 
           <button
             disabled={loading ? true : false}
-            className={`btn py-3 px-7 rounded-lg text-white text-base w- ${
-              loading && "opacity-45"
-            }`}
+            className={`btn ${
+              loading ? "py-1" : "py-3"
+            } px-7 rounded-lg text-white text-base w- ${
+              loading && "opacity-60"
+            } min-w-40`}
           >
-            Join waitlist
+            {loading ? (
+              <Lottie
+                animationData={loadingAnim}
+                loop={true}
+                style={{ width: 40, height: 40, margin: "auto" }}
+              />
+            ) : (
+              <p className="text-white text-base">Join waitlist</p>
+            )}
           </button>
-          {isSuccess && (
-            <div className="px-3 py-2 bg-white rounded-lg m-auto">
-              <h3 className="p text-base font-semibold ">Success</h3>
-            </div>
-          )}
         </form>
       </div>
     </div>
